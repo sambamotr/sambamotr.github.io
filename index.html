@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="DGInStyle: Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control">
+        content="Samba: Synchronized Set-of-Sequences Modeling for End-to-end Multiple Object Tracking">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:image:src" content="http://https://dginstyle.github.io/dginstyle_logo_square.jpg">
-  <meta name="twitter:title" content="DGInStyle Data Pipeline">
-  <meta name="twitter:description" content="Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control">
-  <meta name="twitter:creator" content="@AntonObukhov1">
+  <meta name="twitter:image:src" content="http://https://sambamotr.github.io/dginstyle_logo_square.jpg">
+  <meta name="twitter:title" content="SambaMOTR">
+  <meta name="twitter:description" content="Synchronized Set-of-Sequences Modeling for End-to-end Multiple Object Tracking">
+  <meta name="twitter:creator" content="@mattiasegu">
 
-  <title>DGInStyle: Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control</title>
+  <title>Samba: Synchronized Set-of-Sequences Modeling for End-to-end Multiple Object Tracking</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FWSVCGZTG"></script>
@@ -52,36 +52,34 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DGInStyle: Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control</h1>
+          <h1 class="title is-1 publication-title">Samba: Synchronized Set-of-Sequences Modeling for End-to-end Multiple Object Tracking</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=62c9GI0AAAAJ&hl=en">Yuru Jia</a><sup>1</sup>,
+              <a target="_blank" rel="noopener noreferrer" href="https://mattiasegu.github.io/">Mattia Segu</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://lhoyer.github.io/">Lukas Hoyer</a><sup>1</sup>,
+              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=2I55eokAAAAJ&hl">Luigi Piccinelli</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://shengyuh.github.io/">Shengyu Huang</a><sup>1</sup>,
+              <a target="_blank" rel="noopener noreferrer" href="https://siyuanliii.github.io/">Siyuan Li</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://tianfwang.github.io/">Tianfu Wang</a><sup>1</sup>,
+              <a target="_blank" rel="noopener noreferrer" href="https://royyang0714.github.io/">Yung-Hsu Yang</a><sup>1</sup>,
             </span>
             <br>
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=TwMib_QAAAAJ&hl=en">Luc Van Gool</a><sup>1,2,3</sup>,
+              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=z76PBfYAAAAJ&hl=en">Bernt Schiele</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=FZuNgqIAAAAJ&hl=en">Konrad Schindler</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://www.obukhov.ai/">Anton Obukhov</a><sup>1</sup>
+              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=TwMib_QAAAAJ&hl=en">Luc Van Gool</a><sup>1,3,4</sup>,
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>ETH Zurich, </span>
-            <span class="author-block"><sup>2</sup>KU Leuven, </span>
-            <span class="author-block"><sup>3</sup>INSAIT Sofia</span>
+            <span class="author-block"><sup>2</sup>Max Planck Institute for Informatics</span>
+            <span class="author-block"><sup>3</sup>KU Leuven, </span>
+            <span class="author-block"><sup>4</sup>INSAIT Sofia</span>
           </div>
 
           <div class="column has-text-centered">
@@ -98,37 +96,17 @@
               </span>              
               <!-- Code Link. -->
               <span class="link-block">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/yurujaja/DGInStyle"
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/mattiasegu/sambamotr"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github" style="color: greenyellow"></i>
                   </span>
-                  <span>Generation Code</span>
-                  </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/yurujaja/DGInStyle-SegModel"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github" style="color: lightblue"></i>
-                  </span>
-                  <span>Segmentation Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1e2wiwr5_wgCN3pLCQMOQvjRqQYtEozWy/view?usp=sharing"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-images" style="color: violet"></i>
-                  </span>
-                  <span>Generated Data</span>
+                  <span>Code</span>
                   </a>
               </span>
               <!-- Hugging Face. -->
               <span class="link-block">
-                <a href="https://huggingface.co/yurujaja/DGInStyle" target="_blank" rel="noopener noreferrer"
+                <a href="https://huggingface.co/mattiasegu/sambamotr" target="_blank" rel="noopener noreferrer"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       &#129303;
@@ -161,11 +139,11 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div class="image-viewport">
-        <img id="rotatingImage" src="static/images/teaser_circ.jpg" alt="Rotating Teaser" />
+        <img id="rotatingImage" src="static/images/teaser_circ.jpg" alt="Teaser" />
       </div>
       <!--<img src="static/images/teaser_thin.jpg">-->
       <h2 class="subtitle has-text-centered">
-        <span class="methodname">DGInStyle</span> is a data generation pipeline designed for domain-generalizable semantic segmentation.
+        <span class="methodname">SambaMOTR</span> is an end-to-end multi-object tracker that models long-range dependencies within and across tracklets through synchronized state space models (Samba).
       </h2>
     </div>
   </div>
@@ -179,15 +157,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Large, pretrained latent diffusion models (LDMs) have demonstrated an extraordinary ability to generate creative content, specialize to user data through few-shot fine-tuning, and condition their output on other modalities, such as semantic maps.
-However, are they usable as large-scale data generators, e.g., to improve tasks in the perception stack, like semantic segmentation?
-We investigate this question in the context of autonomous driving, and answer it with a resounding "yes".
-We propose an efficient data generation pipeline termed DGInStyle.
-First, we examine the problem of specializing a pretrained LDM to semantically-controlled generation within a narrow domain.
-Second, we design a Multi-resolution Latent Fusion technique to overcome the bias of LDMs towards dominant objects.
-Third, we propose a Style Swap technique to endow the rich generative prior with the learned semantic control.
-Using DGInStyle, we generate a diverse dataset of street scenes, train a domain-agnostic semantic segmentation model on it, and evaluate the model on multiple popular autonomous driving datasets.
-Our approach consistently increases the performance of several domain generalization methods, in some cases by +2.5 mIoU compared to the previous state-of-the-art method without our generative augmentation scheme. 
+            Learning long-term memory representations is a critical yet often neglected aspect of many temporal visual tasks, such as multiple object tracking.
+            However, it remains an open research question how to model and handle, in a principled fashion, long-range dependencies within each tracklet,
+            interaction among tracklets, as well as temporal occlusions. In this paper, we propose SambaMOTR, the first end-to-end tracking-by-propagation approach
+            that addresses all these issues. SambaMOTR propagates track queries using Samba, our novel linear-time set-of-sequences model inspired by Mamba and
+            based on our novel synchronized selective state spaces. Samba autoregressively predicts the future track query for each sequence while maintaining its history
+            in hidden states that are synchronized across tracklets. Additionally, we introduce an effective technique for dealing with uncertain observations and
+            an efficient training recipe to scale SambaMOTR to longer sequences. Our approach enables accurate modeling of long-range dependencies and interactions
+            among tracked objects, while implicitly learning object motion and appearance changes without the need for any hand-crafted occlusion-handling heuristics.
+            SambaMOTR significantly surpasses prior state of the art on the DanceTrack, BFT, and SportsMOT datasets. Our code will be public.
           </p>
         </div>
       </div>
@@ -282,11 +260,11 @@ Our approach consistently increases the performance of several domain generaliza
 <section class="section pt-0" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre class="selectable"><code>@article{jia2023dginstyle,
-  author        = {Yuru Jia, Lukas Hoyer, Shengyu Huang, Tianfu Wang, Luc Van Gool, Konrad Schindler, Anton Obukhov},
-  title         = {DGInStyle: Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control},
-  year          = {2023},
-  eprint        = {2312.03048},
+    <pre class="selectable"><code>@article{segu2024samba,
+  author        = {Mattia Segu, Luigi Piccinelli, Siyuan Li, Yung-Hsu Yang,  Bernt Schiele, Luc Van Gool},
+  title         = {Samba: Synchronized Set-of-Sequences Modeling for End-to-end Multiple Object Tracking},
+  year          = {2024},
+  eprint        = {2406.03048},
   archivePrefix = {arXiv},
   primaryClass  = {cs.CV}
 }</code></pre>

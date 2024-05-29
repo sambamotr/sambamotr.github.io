@@ -1,6 +1,6 @@
-# DGInStyle
+# SambaMOTR
 
-This is the repository that contains source code for the [DGInStyle website](https://dginstyle.github.io).
+This is the repository that contains source code for the [SambaMOTR website](https://samba.github.io).
 
 
 
