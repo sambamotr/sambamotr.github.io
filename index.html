@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="DGInStyle: Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image:src" content="http://https://dginstyle.github.io/dginstyle_logo_square.jpg">
+  <meta name="twitter:title" content="DGInStyle Data Pipeline">
+  <meta name="twitter:description" content="Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control">
+  <meta name="twitter:creator" content="@AntonObukhov1">
+
+  <title>DGInStyle: Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FWSVCGZTG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-1FWSVCGZTG');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DGInStyle: Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=62c9GI0AAAAJ&hl=en">Yuru Jia</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://lhoyer.github.io/">Lukas Hoyer</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://shengyuh.github.io/">Shengyu Huang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://tianfwang.github.io/">Tianfu Wang</a><sup>1</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=TwMib_QAAAAJ&hl=en">Luc Van Gool</a><sup>1,2,3</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=FZuNgqIAAAAJ&hl=en">Konrad Schindler</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.obukhov.ai/">Anton Obukhov</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>ETH Zurich, </span>
+            <span class="author-block"><sup>2</sup>KU Leuven, </span>
+            <span class="author-block"><sup>3</sup>INSAIT Sofia</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2312.03048"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf" style="color: #ff8038"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>              
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/yurujaja/DGInStyle"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github" style="color: greenyellow"></i>
+                  </span>
+                  <span>Generation Code</span>
+                  </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/yurujaja/DGInStyle-SegModel"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github" style="color: lightblue"></i>
+                  </span>
+                  <span>Segmentation Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1e2wiwr5_wgCN3pLCQMOQvjRqQYtEozWy/view?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-images" style="color: violet"></i>
+                  </span>
+                  <span>Generated Data</span>
+                  </a>
+              </span>
+              <!-- Hugging Face. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/yurujaja/DGInStyle" target="_blank" rel="noopener noreferrer"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      &#129303;
+                  </span>
+                  <span>Model</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function() {
+    let angle = 0;
+    setInterval(function() {
+      angle += 360/7;
+      $('#rotatingImage').css({
+        'transform': 'rotate(' + angle + 'deg)',
+        'transition': 'transform 0.5s'
+      });
+    }, 3000);
+  });
+</script>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="image-viewport">
+        <img id="rotatingImage" src="static/images/teaser_circ.jpg" alt="Rotating Teaser" />
+      </div>
+      <!--<img src="static/images/teaser_thin.jpg">-->
+      <h2 class="subtitle has-text-centered">
+        <span class="methodname">DGInStyle</span> is a data generation pipeline designed for domain-generalizable semantic segmentation.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Large, pretrained latent diffusion models (LDMs) have demonstrated an extraordinary ability to generate creative content, specialize to user data through few-shot fine-tuning, and condition their output on other modalities, such as semantic maps.
+However, are they usable as large-scale data generators, e.g., to improve tasks in the perception stack, like semantic segmentation?
+We investigate this question in the context of autonomous driving, and answer it with a resounding "yes".
+We propose an efficient data generation pipeline termed DGInStyle.
+First, we examine the problem of specializing a pretrained LDM to semantically-controlled generation within a narrow domain.
+Second, we design a Multi-resolution Latent Fusion technique to overcome the bias of LDMs towards dominant objects.
+Third, we propose a Style Swap technique to endow the rich generative prior with the learned semantic control.
+Using DGInStyle, we generate a diverse dataset of street scenes, train a domain-agnostic semantic segmentation model on it, and evaluate the model on multiple popular autonomous driving datasets.
+Our approach consistently increases the performance of several domain generalization methods, in some cases by +2.5 mIoU compared to the previous state-of-the-art method without our generative augmentation scheme. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Which problems does DGInStyle solve?</h2>
+        <div class="content has-text-justified">
+          <h3 class="title has-text-centered">
+            Style drift
+          </h3>
+
+          <p>
+            When training on synthetic data, ControlNet learns not only to control but also to steer the generation
+            style toward the synthetic domain. This issue constrains the quality and diversity of the output generation
+            and hinders the usage of the rich generative prior to the full extent. The style drift issue and the way
+            DGInStyle addressed it are exemplified in the figure below.
+          </p>
+
+          <img width="100%" src="./static/images/style_overfit.jpg" alt="Style drift issue fixed"/>
+
+          <h3 class="title has-text-centered">
+            Small instances
+          </h3>
+
+          <p>
+            Stable Diffusion operates in the latent space, and therefore, its effective resolution is limited. We pay
+            special attention to small instances when generating high-resolution images conditioned on high-resolution
+            semantic masks. Such attention helps with the coherency of the generated data and improves downstream
+            applications, such as semantic segmentation. The small instances issue and the way DGInStyle addressed it
+            are exemplified in the figure below.
+          </p>
+
+          <img width="100%" src="./static/images/small_instances.jpg" alt="Small instances issue fixed"/>
+
+          <p class="mt-5">
+            Refer to the pdf paper for more details on qualitative, quantitative, and ablation studies.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container is-max-desktop">
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">How good is DGInStyle data?</h2>
+        <div class="content has-text-justified">
+          <h3 class="title has-text-centered">
+            Quantitative study
+          </h3>
+
+          <p>
+            We train multiple state-of-the-art Domain Generalization solutions for semantic segmentation with DGInStyle
+            and obtain superior performance.
+          </p>
+
+          <img width="100%" src="./static/images/benchmark.jpg" alt="Benchmark"/>
+
+          <h3 class="title has-text-centered">
+            Qualitative study
+          </h3>
+
+          <p>
+            Each mask can be used with multiple freeform text prompts to diversify the generated data and enable domain
+            generalization in downstream tasks. This is made possible thanks to the internet-scale generative prior.
+          </p>
+
+          <img width="100%" src="./static/images/weather_samples.jpg" alt="Small instances issue fixed"/>
+
+          <p class="mt-5">
+            Refer to the pdf paper for more details on qualitative, quantitative, and ablation studies.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+  </div>
+</section>
+
+<section class="section pt-0" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre class="selectable"><code>@article{jia2023dginstyle,
+  author        = {Yuru Jia, Lukas Hoyer, Shengyu Huang, Tianfu Wang, Luc Van Gool, Konrad Schindler, Anton Obukhov},
+  title         = {DGInStyle: Domain-Generalizable Semantic Segmentation with Image Diffusion Models and Stylized Semantic Control},
+  year          = {2023},
+  eprint        = {2312.03048},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer pt-0 pb-0">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template based on
+            <a href="https://github.com/nerfies/nerfies.github.io">
+              Nerfies
+            </a>
+            and licensed under
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              CC-BY-SA-4.0
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
