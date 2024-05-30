@@ -1,6 +1,6 @@
 # SambaMOTR
 
-This is the repository that contains source code for the [SambaMOTR website](https://samba.github.io).
+This is the repository that contains source code for the [SambaMOTR website](https://sambamotr.github.io).
 
 
 
