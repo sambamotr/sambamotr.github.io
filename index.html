@@ -167,21 +167,22 @@
           <div class="column is-one-third">
             <h4 class="title is-5 has-text-centered">SportsMOT</h4>
             <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/sportsmot/v_4r8QL_wglzQ_c001.mp4" type="video/mp4">
+              <source src="./static/videos/sportsmot/v_0kUtTtmLaJA_c010.mp4" type="video/mp4">
             </video>
           </div>
         </div>
       </div>
     </div>
-
   </section>
+
+  <hr style="border: 1px solid #e0e0e0; margin: 20px auto; width: 50%;">
 
   <section class="section pt-0" id="abstract">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <h2 class="title is-3 has-text-centered" style="padding-top: 20px;">Abstract</h2>
           <div class="content has-text-justified">
             <p>
               Learning long-term memory representations is a critical yet often neglected aspect of many temporal visual tasks, such as multiple object tracking. However, it remains an open research question how to model and handle, in a principled fashion, long-range dependencies within each tracklet, interaction among tracklets, as well as temporal occlusions. In this paper, we propose SambaMOTR, the first end-to-end tracking-by-propagation approach that addresses all these issues. SambaMOTR propagates track queries using Samba, our novel linear-time set-of-sequences model inspired by Mamba and based on our novel synchronized selective state spaces. Samba autoregressively predicts the future track query for each sequence while maintaining its history in hidden states that are synchronized across tracklets. Additionally, we introduce an effective technique for dealing with uncertain observations and an efficient training recipe to scale SambaMOTR to longer sequences. Our approach enables accurate modeling of long-range dependencies and interactions among tracked objects, while implicitly learning object motion and appearance changes without the need for any hand-crafted occlusion-handling heuristics. 
@@ -194,27 +195,25 @@
     </div>
   </section>
 
+  <hr style="border: 1px solid #e0e0e0; margin: 20px auto; width: 50%;">
 
   <section class="section pt-0" id="SambaMOTR">
     <div class="container is-max-desktop">
       <!-- Method. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3 has-text-centered">SambaMOTR</h2>
+          <h2 class="title is-3 has-text-centered" style="padding-top: 20px;">SambaMOTR</h2>
           <div class="content has-text-justified">
 
-            <h3 class="title has-text-centered">
+            <h3 class="title has-text-centered" style="padding-top: 20px;">
               Architecture
             </h3>
 
-            <p>
-              Some text.
-            </p>
 
             <img width="100%" src="./static/images/sambamotr.png" alt="SambaMOTR model architecture"/>
 
-            <p class="mt-5">
-              Refer to the pdf paper for more details on qualitative, quantitative, and ablation studies.
+            <p>
+              SambaMOTR is composed of a transformer-based object detector and a Samba module. The object detector's encoder extracts image features from each frame, which are fed into its decoder together with detect and track queries to detect newborn objects or re-detect tracked ones. The Samba module simultaneously processes the past hidden states and currently observed output queries for all tracklets to predict the next track queries and update the hidden states. The hidden states of newborn objects are initialized from zero values (barred squares). In case of occlusions, the current observation is disregarded (red cross) during the Samba update. 
             </p>
           </div>
         </div>
@@ -223,38 +222,34 @@
     </div>
   </section>
 
-
-
+  <hr style="border: 1px solid #e0e0e0; margin: 20px auto; width: 50%;">
 
   <section class="section pt-0" id="Samba">
     <div class="container is-max-desktop">
       <!-- Method. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3 has-text-centered">Samba: Synchronized Set-of-Sequences Modeling</h2>
+          <h2 class="title is-3 has-text-centered" style="padding-top: 20px;">Samba: Synchronized Set-of-Sequences Modeling</h2>
           <div class="content has-text-justified">
-            <h3 class="title has-text-centered">
+            <h3 class="title has-text-centered" style="padding-top: 20px;">
               Synchronized Selective State Space Models
             </h3>
 
-            <p>
-              Some text.
-            </p>
-
             <img width="100%" src="./static/images/ssm.png" alt="Synchronized Selective State Space Model"/>
 
-            <h3 class="title has-text-centered">
+            <p>
+              We illustrate a set of <i>k</i> selective state space models whose hidden states <i>h<sup>i</sup><sub>t</sub></i> updated with the current observations <i>x<sup>i</sup><sub>t</sub></i> are synchronized by our state synchronization block to derive the synchronized hidden state <i>&#772;h<sup>i</sup><sub>t</sub></i>, used to predict the output <i>y<sup>i</sup><sub>t</sub></i>.
+            </p>
+
+            <h3 class="title has-text-centered" style="padding-top: 20px;">
               Samba Module
             </h3>
 
-            <p>
-              Some text.
-            </p>
 
             <img width="100%" src="./static/images/samba_block.png" alt="Samba model architecture"/>
 
-            <p class="mt-5">
-              Refer to the pdf paper for more details on qualitative, quantitative, and ablation studies.
+            <p>
+              A Samba block is composed of multiple Mamba blocks with shared weights and a state synchronization block that synchronizes hidden states across the individual state space models. A stack of N Samba blocks constitutes a Samba module.
             </p>
           </div>
         </div>
@@ -263,144 +258,144 @@
     </div>
   </section>
 
+  <hr style="border: 1px solid #e0e0e0; margin: 20px auto; width: 50%;">
+
   <section class="section" id="results">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Results</h2>
-        <p> Our work is motivated by the need for a tracking approach that can effectively model these joint motions and interactions over extended periods. By developing SambaMOTR, we aim to capture the intricate dynamics of group movements, enabling more accurate and robust tracking in scenarios where objects' motions are inherently interconnected. Modeling joint motions is crucial in datasets like DanceTrack, where dancers move in synchronization and frequently interact; SportsMOT, where players' movements are highly interdependent based on game strategies and ball position; and BFT (Bird Flock Tracking), where birds exhibit collective behavior influenced by their neighbors. By accounting for these complex interactions, SambaMOTR can maintain consistent tracking even during occlusions, rapid movements, and densely packed scenes typical in these challenging datasets. Here's a glimpse of SambaMOTR's performance: </p>
-      <div class="container is-max-desktop">
-        <h3 class="title is-4 has-text-centered">DanceTrack Results</h3>
-    
-        <div class="columns is-multiline">
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/dancetrack/dancetrack0038.mp4" type="video/mp4">
-            </video>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title has-text-centered" style="margin-top: -20px;">Results</h2>
+          <p class="has-text-justified"> Our work is motivated by the need for a tracking approach that can effectively model these joint motions and interactions over extended periods. By developing SambaMOTR, we aim to capture the intricate dynamics of group movements, enabling more accurate and robust tracking in scenarios where objects' motions are inherently interconnected. Modeling joint motions is crucial in datasets like DanceTrack, where dancers move in synchronization and frequently interact; SportsMOT, where players' movements are highly interdependent based on game strategies and ball position; and BFT (Bird Flock Tracking), where birds exhibit collective behavior influenced by their neighbors. By accounting for these complex interactions, SambaMOTR can maintain consistent tracking even during occlusions, rapid movements, and densely packed scenes typical in these challenging datasets. Here's a glimpse of SambaMOTR's performance: </p>
+
+          <h3 class="title is-4 has-text-centered" style="padding-top: 20px;">DanceTrack Results</h3>
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/dancetrack/dancetrack0038.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-third">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/dancetrack/dancetrack0040.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-third">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/dancetrack/dancetrack0054.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-half">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/dancetrack/dancetrack0067.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-half">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/dancetrack/dancetrack0078.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/dancetrack/dancetrack0040.mp4" type="video/mp4">
-            </video>
+
+          <h3 class="title is-4 has-text-centered" style="padding-top: 20px;">BFT Results</h3>
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/bft/An1002.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-third">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/bft/An3001.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-third">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/bft/An6001.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-third">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/bft/An6010.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-third">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/bft/Ci2004.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-third">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/bft/Gr3002.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-half">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/bft/Ps4001.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-one-half">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/bft/Su2003.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/dancetrack/dancetrack0054.mp4" type="video/mp4">
-            </video>
+
+          <h3 class="title is-4 has-text-centered" style="padding-top: 20px;">SportsMOT Results</h3>
+          <div class="content has-text-justified">
+            <p>Explore our tracking results on SportsMOT across volleyball, basketball, and football categories:</p>
           </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/dancetrack/dancetrack0067.mp4" type="video/mp4">
-            </video>
+
+          <h4 class="title is-5 has-text-centered" style="padding-top: 15px;">Volleyball</h4>
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/sportsmot/v_4-EmEtrturE_c009.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-half">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/sportsmot/v_0kUtTtmLaJA_c010.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/dancetrack/dancetrack0078.mp4" type="video/mp4">
-            </video>
+
+          <h4 class="title is-5 has-text-centered" style="padding-top: 15px;">Basketball</h4>
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/sportsmot/v_4r8QL_wglzQ_c001.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-half">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/sportsmot/v_00HRwkvvjtQ_c003.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <h4 class="title is-5 has-text-centered" style="padding-top: 15px;">Football</h4>
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/sportsmot/v_i2_L4qquVg0_c007.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column is-half">
+              <video poster="" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/sportsmot/v_dw7LOz17Omg_c067.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="container is-max-desktop">
-        <h3 class="title is-4 has-text-centered">BFT Results</h3>
-    
-        <div class="columns is-multiline">
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/bft/An1002.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/bft/An3001.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/bft/An6001.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/bft/An6010.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/bft/Ci2004.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/bft/Gr3002.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/bft/Ps4001.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="column is-one-third">
-            <video poster="" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/bft/Su2003.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-
-    <div class="container is-max-desktop">
-      <h3 class="title is-4 has-text-centered">SportsMOT Results</h3>
-      <div class="content has-text-justified">
-        <p>Explore our tracking results on the SportsMOT dataset across volleyball, basketball, and football categories:</p>
-      </div>
-
-      <h4 class="title is-5 has-text-centered">Volleyball</h4>
-      <div class="columns is-multiline">
-        <div class="column is-half">
-          <video poster="" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/sportsmot/v_4-EmEtrturE_c009.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="column is-half">
-          <video poster="" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/sportsmot/v_0kUtTtmLaJA_c010.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-      <h4 class="title is-5 has-text-centered">Basketball</h4>
-      <div class="columns is-multiline">
-        <div class="column is-half">
-          <video poster="" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/sportsmot/v_4r8QL_wglzQ_c001.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="column is-half">
-          <video poster="" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/sportsmot/v_00HRwkvvjtQ_c003.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-      <h4 class="title is-5 has-text-centered">Football</h4>
-      <div class="columns is-multiline">
-        <div class="column is-half">
-          <video poster="" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/sportsmot/v_i2_L4qquVg0_c007.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="column is-half">
-          <video poster="" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/sportsmot/v_dw7LOz17Omg_c067.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-
     </div>
   </section>
 
+  <hr style="border: 1px solid #e0e0e0; margin: 20px auto; width: 50%;">
+
   <section class="section pt-0" id="Cite Us!">
     <div class="container is-max-desktop content">
-      <h2 class="title has-text-centered">BibTeX</h2>
+      <h2 class="title has-text-centered" style="padding-top: 20px;">BibTeX</h2>
       <pre class="selectable"><code>@article{segu2024samba,
   author        = {Mattia Segu, Luigi Piccinelli, Siyuan Li, Yung-Hsu Yang,  Bernt Schiele, Luc Van Gool},
   title         = {Samba: Synchronized Set-of-Sequences Modeling for End-to-end Multiple Object Tracking},
@@ -411,6 +406,8 @@
 }</code></pre>
     </div>
   </section>
+
+  <hr style="border: 1px solid #e0e0e0; margin: 20px auto; width: 50%;">
 
   <footer class="footer pt-0 pb-0">
     <div class="container">
@@ -435,3 +432,4 @@
 
 </body>
 </html>
+
