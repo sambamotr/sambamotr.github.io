@@ -38,265 +38,370 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.png">
+  <link rel="icon" href="./static/images/logo.png" type="image/png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
 </head>
+
 <body>
-
-<section class="hero">
-  <div class="hero-body">
+  <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f8f9fa; padding: 0rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Samba: Synchronized Set-of-Sequences Modeling for End-to-end Multiple Object Tracking</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://mattiasegu.github.io/">Mattia Segu</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=2I55eokAAAAJ&hl">Luigi Piccinelli</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://siyuanliii.github.io/">Siyuan Li</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://royyang0714.github.io/">Yung-Hsu Yang</a><sup>1</sup>,
-            </span>
-            <br>
-            <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=z76PBfYAAAAJ&hl=en">Bernt Schiele</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=TwMib_QAAAAJ&hl=en">Luc Van Gool</a><sup>1,3</sup>,
-            </span>
-          </div>
+      <div class="navbar-brand" style="display: flex; justify-content: center; width: 100%;">
+        <a class="navbar-item" href="#abstract" style="font-weight: bold;">Abstract</a>
+        <a class="navbar-item" href="#SambaMOTR" style="font-weight: bold;">SambaMOTR</a>
+        <a class="navbar-item" href="#Samba" style="font-weight: bold;">Samba</a>
+        <a class="navbar-item" href="#results" style="font-weight: bold;">Results</a>
+        <a class="navbar-item" href="#Cite Us!" style="font-weight: bold;">Cite Us!</a>
+      </div>
+    </div>
+  </nav>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>ETH Zurich, </span>
-            <span class="author-block"><sup>2</sup>Max Planck Institute for Informatics, </span>
-            <span class="author-block"><sup>3</sup>INSAIT Sofia</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2312.03048"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf" style="color: #ff8038"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>              
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/mattiasegu/sambamotr"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github" style="color: greenyellow"></i>
-                  </span>
-                  <span>Code</span>
+            <!-- Logo placed above the title -->
+            <img src="./static/images/logo.png" alt="SambaMOTR Logo" style="max-width: 150px; margin-bottom: 20px;">
+            <h1 class="title publication-title" style="font-size: 2.5rem;">Samba: Synchronized Set-of-Sequences Modeling for End-to-end Multiple Object Tracking</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a target="_blank" rel="noopener noreferrer" href="https://mattiasegu.github.io/">Mattia Segu</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=2I55eokAAAAJ&hl">Luigi Piccinelli</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank" rel="noopener noreferrer" href="https://siyuanliii.github.io/">Siyuan Li</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank" rel="noopener noreferrer" href="https://royyang0714.github.io/">Yung-Hsu Yang</a><sup>1</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=z76PBfYAAAAJ&hl=en">Bernt Schiele</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=TwMib_QAAAAJ&hl=en">Luc Van Gool</a><sup>1,3</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>ETH Zurich, </span>
+              <span class="author-block"><sup>2</sup>Max Planck Institute for Informatics, </span>
+              <span class="author-block"><sup>3</sup>INSAIT Sofia</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2312.03048"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf" style="color: #ff8038"></i>
+                    </span>
+                    <span>Paper</span>
                   </a>
-              </span>
-              <!-- Hugging Face. -->
-              <span class="link-block">
-                <a href="https://huggingface.co/mattiasegu/sambamotr" target="_blank" rel="noopener noreferrer"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      &#129303;
-                  </span>
-                  <span>Model</span>
-                </a>
-              </span>
+                </span>              
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a target="_blank" rel="noopener noreferrer" href="https://github.com/mattiasegu/sambamotr"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github" style="color: greenyellow"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+                <!-- Hugging Face. -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/mattiasegu/sambamotr" target="_blank" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        &#129303;
+                    </span>
+                    <span>Model</span>
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<script>
-  $(document).ready(function() {
-    let angle = 0;
-    setInterval(function() {
-      angle += 360/7;
-      $('#rotatingImage').css({
-        'transform': 'rotate(' + angle + 'deg)',
-        'transition': 'transform 0.5s'
-      });
-    }, 3000);
-  });
-</script>
+  <script>
+    $(document).ready(function() {
+      let angle = 0;
+      setInterval(function() {
+        angle += 360/7;
+        $('#rotatingImage').css({
+          'transform': 'rotate(' + angle + 'deg)',
+          'transition': 'transform 0.5s'
+        });
+      }, 3000);
+    });
+  </script>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- <div class="image-viewport">
-        <img id="rotatingImage" src="static/images/sambamotr.jpg" alt="Teaser" />
-      </div> -->
-      <!--<img src="static/images/teaser_thin.jpg">-->
-      <img width="100%" src="./static/images/sambamotr.png" alt="SambaMOTR Teaser"/>
-
-      <h2 class="subtitle has-text-centered">
-        <span class="methodname">SambaMOTR</span> is an end-to-end multi-object tracker that models long-range dependencies within and across tracklets through synchronized state space models (Samba).
-      </h2>
-    </div>
-  </div>
-</section>
-
-<section class="section pt-0">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Learning long-term memory representations is a critical yet often neglected aspect of many temporal visual tasks, such as multiple object tracking.
-            However, it remains an open research question how to model and handle, in a principled fashion, long-range dependencies within each tracklet,
-            interaction among tracklets, as well as temporal occlusions. In this paper, we propose SambaMOTR, the first end-to-end tracking-by-propagation approach
-            that addresses all these issues. SambaMOTR propagates track queries using Samba, our novel linear-time set-of-sequences model inspired by Mamba and
-            based on our novel synchronized selective state spaces. Samba autoregressively predicts the future track query for each sequence while maintaining its history
-            in hidden states that are synchronized across tracklets. Additionally, we introduce an effective technique for dealing with uncertain observations and
-            an efficient training recipe to scale SambaMOTR to longer sequences. Our approach enables accurate modeling of long-range dependencies and interactions
-            among tracked objects, while implicitly learning object motion and appearance changes without the need for any hand-crafted occlusion-handling heuristics.
-            SambaMOTR significantly surpasses prior state of the art on the DanceTrack, BFT, and SportsMOT datasets.
-          </p>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <div class="column is-one-third">
+            <h4 class="title is-5 has-text-centered">DanceTrack</h4>
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/dancetrack/dancetrack0038.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <h4 class="title is-5 has-text-centered">BFT</h4>
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/bft/An1002.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <h4 class="title is-5 has-text-centered">SportsMOT</h4>
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/sportsmot/v_4r8QL_wglzQ_c001.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
+
+  </section>
+
+  <section class="section pt-0" id="abstract">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Learning long-term memory representations is a critical yet often neglected aspect of many temporal visual tasks, such as multiple object tracking. However, it remains an open research question how to model and handle, in a principled fashion, long-range dependencies within each tracklet, interaction among tracklets, as well as temporal occlusions. In this paper, we propose SambaMOTR, the first end-to-end tracking-by-propagation approach that addresses all these issues. SambaMOTR propagates track queries using Samba, our novel linear-time set-of-sequences model inspired by Mamba and based on our novel synchronized selective state spaces. Samba autoregressively predicts the future track query for each sequence while maintaining its history in hidden states that are synchronized across tracklets. Additionally, we introduce an effective technique for dealing with uncertain observations and an efficient training recipe to scale SambaMOTR to longer sequences. Our approach enables accurate modeling of long-range dependencies and interactions among tracked objects, while implicitly learning object motion and appearance changes without the need for any hand-crafted occlusion-handling heuristics. 
+              Multiple object tracking in complex scenarios, such as dance performances, team sports, or animal groups, presents unique challenges that traditional tracking methods often struggle to address. In these settings, objects frequently move in coordinated patterns, occlude each other, and exhibit long-term dependencies in their trajectories. By accounting for these complex interactions, SambaMOTR can maintain consistent tracking even during occlusions, rapid movements, and densely packed scenes typical in these challenging datasets. SambaMOTR significantly surpasses prior state of the art on the DanceTrack, BFT, and SportsMOT datasets.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
 
 
-<section class="section pt-0">
-  <div class="container is-max-desktop">
-    <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">SambaMOTR</h2>
-        <div class="content has-text-justified">
-          <h3 class="title has-text-centered">
-            Motivation
-          </h3>
+  <section class="section pt-0" id="SambaMOTR">
+    <div class="container is-max-desktop">
+      <!-- Method. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">SambaMOTR</h2>
+          <div class="content has-text-justified">
 
-          <p>
-            Some text.
-          </p>
+            <h3 class="title has-text-centered">
+              Architecture
+            </h3>
 
-          <img width="100%" src="./static/images/sambamotr.png" alt="Tracking through occlusions with SambaMOTR"/>
-          <!-- <img width="100%" src="./static/images/sambamotr_memotr_motivation.png" alt="Tracking through occlusions with SambaMOTR"/> -->
+            <p>
+              Some text.
+            </p>
 
-          <h3 class="title has-text-centered">
-            Architecture
-          </h3>
+            <img width="100%" src="./static/images/sambamotr.png" alt="SambaMOTR model architecture"/>
 
-          <p>
-            Some text.
-          </p>
+            <p class="mt-5">
+              Refer to the pdf paper for more details on qualitative, quantitative, and ablation studies.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Method. -->
+    </div>
+  </section>
 
-          <img width="100%" src="./static/images/sambamotr.png" alt="SambaMOTR model architecture"/>
 
-          <p class="mt-5">
-            Refer to the pdf paper for more details on qualitative, quantitative, and ablation studies.
-          </p>
+
+
+  <section class="section pt-0" id="Samba">
+    <div class="container is-max-desktop">
+      <!-- Method. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Samba: Synchronized Set-of-Sequences Modeling</h2>
+          <div class="content has-text-justified">
+            <h3 class="title has-text-centered">
+              Synchronized Selective State Space Models
+            </h3>
+
+            <p>
+              Some text.
+            </p>
+
+            <img width="100%" src="./static/images/ssm.png" alt="Synchronized Selective State Space Model"/>
+
+            <h3 class="title has-text-centered">
+              Samba Module
+            </h3>
+
+            <p>
+              Some text.
+            </p>
+
+            <img width="100%" src="./static/images/samba_block.png" alt="Samba model architecture"/>
+
+            <p class="mt-5">
+              Refer to the pdf paper for more details on qualitative, quantitative, and ablation studies.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Method. -->
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Results</h2>
+        <p> Our work is motivated by the need for a tracking approach that can effectively model these joint motions and interactions over extended periods. By developing SambaMOTR, we aim to capture the intricate dynamics of group movements, enabling more accurate and robust tracking in scenarios where objects' motions are inherently interconnected. Modeling joint motions is crucial in datasets like DanceTrack, where dancers move in synchronization and frequently interact; SportsMOT, where players' movements are highly interdependent based on game strategies and ball position; and BFT (Bird Flock Tracking), where birds exhibit collective behavior influenced by their neighbors. By accounting for these complex interactions, SambaMOTR can maintain consistent tracking even during occlusions, rapid movements, and densely packed scenes typical in these challenging datasets. Here's a glimpse of SambaMOTR's performance: </p>
+      <div class="container is-max-desktop">
+        <h3 class="title is-4 has-text-centered">DanceTrack Results</h3>
+    
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/dancetrack/dancetrack0038.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/dancetrack/dancetrack0040.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/dancetrack/dancetrack0054.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/dancetrack/dancetrack0067.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/dancetrack/dancetrack0078.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="container is-max-desktop">
+        <h3 class="title is-4 has-text-centered">BFT Results</h3>
+    
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/bft/An1002.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/bft/An3001.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/bft/An6001.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/bft/An6010.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/bft/Ci2004.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/bft/Gr3002.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/bft/Ps4001.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="column is-one-third">
+            <video poster="" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/bft/Su2003.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+    <div class="container is-max-desktop">
+      <h3 class="title is-4 has-text-centered">SportsMOT Results</h3>
+      <div class="content has-text-justified">
+        <p>Explore our tracking results on the SportsMOT dataset across volleyball, basketball, and football categories:</p>
+      </div>
+
+      <h4 class="title is-5 has-text-centered">Volleyball</h4>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/sportsmot/v_4-EmEtrturE_c009.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column is-half">
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/sportsmot/v_0kUtTtmLaJA_c010.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h4 class="title is-5 has-text-centered">Basketball</h4>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/sportsmot/v_4r8QL_wglzQ_c001.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column is-half">
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/sportsmot/v_00HRwkvvjtQ_c003.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <h4 class="title is-5 has-text-centered">Football</h4>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/sportsmot/v_i2_L4qquVg0_c007.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column is-half">
+          <video poster="" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/sportsmot/v_dw7LOz17Omg_c067.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
-    <!--/ Method. -->
-  </div>
-</section>
 
-
-
-
-<section class="section pt-0">
-  <div class="container is-max-desktop">
-    <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Samba: Synchronized Set-of-Sequences Modeling</h2>
-        <div class="content has-text-justified">
-          <h3 class="title has-text-centered">
-            Synchronized Selective State Space Models
-          </h3>
-
-          <p>
-            Some text.
-          </p>
-
-          <img width="100%" src="./static/images/ssm.png" alt="Synchronized Selective State Space Model"/>
-
-          <h3 class="title has-text-centered">
-            Samba Module
-          </h3>
-
-          <p>
-            Some text.
-          </p>
-
-          <img width="100%" src="./static/images/samba_block.png" alt="Samba model architecture"/>
-
-          <p class="mt-5">
-            Refer to the pdf paper for more details on qualitative, quantitative, and ablation studies.
-          </p>
-        </div>
-      </div>
     </div>
-    <!--/ Method. -->
-  </div>
-</section>
+  </section>
 
-
-<section class="section pt-0">
-  <div class="container is-max-desktop">
-    <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Qualitative Results</h2>
-        <div class="content has-text-justified">
-          <h3 class="title has-text-centered">
-            Comparison with MeMOTR
-          </h3>
-
-          <p>
-            Some text.
-          </p>
-
-          <!-- <img width="100%" src="./static/images/ssm.png" alt="Synchronized Selective State Space Model"/> -->
-
-          <h3 class="title has-text-centered">
-            More Qualitative Results
-          </h3>
-
-          <p>
-            Some text.
-          </p>
-
-          <!-- <img width="100%" src="./static/images/samba_block.png" alt="Samba model architecture"/> -->
-
-          <p class="mt-5">
-            Refer to the pdf paper for more details on qualitative, quantitative, and ablation studies.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Method. -->
-  </div>
-</section>
-
-
-<section class="section pt-0" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre class="selectable"><code>@article{segu2024samba,
+  <section class="section pt-0" id="Cite Us!">
+    <div class="container is-max-desktop content">
+      <h2 class="title has-text-centered">BibTeX</h2>
+      <pre class="selectable"><code>@article{segu2024samba,
   author        = {Mattia Segu, Luigi Piccinelli, Siyuan Li, Yung-Hsu Yang,  Bernt Schiele, Luc Van Gool},
   title         = {Samba: Synchronized Set-of-Sequences Modeling for End-to-end Multiple Object Tracking},
   year          = {2024},
@@ -304,29 +409,29 @@
   archivePrefix = {arXiv},
   primaryClass  = {cs.CV}
 }</code></pre>
-  </div>
-</section>
+    </div>
+  </section>
 
-<footer class="footer pt-0 pb-0">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            Website template based on
-            <a href="https://github.com/nerfies/nerfies.github.io">
-              Nerfies
-            </a>
-            and licensed under
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-              CC-BY-SA-4.0
-            </a>.
-          </p>
+  <footer class="footer pt-0 pb-0">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Website template based on
+              <a href="https://github.com/nerfies/nerfies.github.io">
+                Nerfies
+              </a>
+              and licensed under
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                CC-BY-SA-4.0
+              </a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
